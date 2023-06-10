@@ -1,6 +1,12 @@
 <?php
 
+$conn = mysqli_connect('localhost', 'root', 'mysql', 'indexing');
 
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
 
 if($_POST['send'] && $_POST['send'] == 'url'){
   
@@ -110,6 +116,77 @@ select option {
   color: #000;
 }
 
+
+<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			max-width: 500px;
+			margin: 20px auto;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+		}
+		th, td {
+			padding: 10px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+		th {
+			background-color: #f2f2f2;
+			color: #333;
+		}
+		.toggle {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			width: 60px;
+			height: 30px;
+			border-radius: 15px;
+			border: 2px solid #ccc;
+			overflow: hidden;
+			cursor: pointer;
+		}
+		.toggle:before {
+			content: "";
+			position: absolute;
+			top: 2px;
+			left: 2px;
+			width: 26px;
+			height: 26px;
+			border-radius: 50%;
+			background-color: #ccc;
+			transition: all 0.3s;
+		}
+		.toggle.on:before {
+			transform: translateX(30px);
+			background-color: #66bb6a;
+		}
+		.toggle.off:before {
+			transform: translateX(0px);
+			background-color: #ef5350;
+		}
+		.toggle span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			font-size: 14px;
+			color: #ccc;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			z-index: 2;
+			user-select: none;
+		}
+		.toggle.on span {
+			color: #66bb6a;
+		}
+		.toggle.off span {
+			color: #ef5350;
+		}
+	</style>
+
 	</style>
 </head>
 <body>
@@ -126,12 +203,6 @@ www.businesschecksonline</option>
             <option value="https://www.computercheckscheap.com/">computercheckscheap</option>
             <option value="https://www.micrcheckprinting.com/">micrcheckprinting</option>
             <option value="https://www.orderbusinesschecks.com/">orderbusinesschecks</option>
-
-
-
-
-
-
 		</select>
 
 		<label for="message">URLs for Indexing:</label>
@@ -140,6 +211,28 @@ www.businesschecksonline</option>
 		<input type="hidden" name="send" value="url">
 		<input type="submit" value="Submit">
 	</form>
+
+    <table>
+		<thead>
+			<tr>
+				<th>Column 1</th>
+				<th>Column 2</th>
+				<th>Column 3</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Row 1, Column 1</td>
+				<td>Row 1, Column 2</td>
+				<td>
+					<div class="toggle on">
+						<span>ON</span>
+					</div>
+				</td>
+			</tr>
+			
+		</tbody>
+	</table>
 </body
 </html>
 

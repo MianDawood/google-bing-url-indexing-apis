@@ -1,7 +1,4 @@
 <?php
-
-
-
 if($_POST['send'] && $_POST['send'] == 'url'){
   
 	$input = $_POST['urls'];

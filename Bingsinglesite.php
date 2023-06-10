@@ -5,10 +5,10 @@ if($_POST['send'] && $_POST['send'] == 'url'){
 	$array = explode(",", $input);
 	$values = array_values($array);
 	
-	$apikey = "your-api-key";
-	//$siteUrl = "https://bitcoderlabs.com";
+	$apikey = "821f0dfefbe841158b443a86b7d6f8d3";
+	$siteUrl = "https://bitcoderlabs.com";
 
-	$siteUrl = "http://gtvcbpeshawar.edu.pk/";
+	//$siteUrl = "http://gtvcbpeshawar.edu.pk/";
 	$urlList = $values;
 	$data = array(
 		"siteUrl" => $siteUrl,
